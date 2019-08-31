@@ -14,7 +14,6 @@ def save_file(fieldnames, filename):
             'name': input("Enter a New Disease Name:\n").title(),
             'year': int(input("Enter the Year of Last Occurence:\n")),
             'country': input("Enter the Country of Last Occurence:\n").title(),
-            'deaths': int(input("Enter the Number of Deaths (Millions):\n")),
             'vaccine': input("Enter the Founder of the Vaccine:\n").title()
         })
         print()
@@ -26,11 +25,11 @@ def view_file(fieldnames, filename):
 
         eradicated_diseases = list(csvReader)
         print(
-            f'{"Disease Name":15} {"Last Occurence (Year)":25} {"Last Occurence (Country)":25} {"Deaths (Millions)":20} {"Vaccine Founder"}')
+            f'{"Disease Name":15} {"Last Occurence (Year)":25} {"Last Occurence (Country)":25} {"Vaccine Founder"}')
 
         for disease in eradicated_diseases:
             if disease['name'] != 'name':
-                print(f'{disease["name"]:15} {disease["year"]:25} {disease["country"]:25} {disease["deaths"]:20} {disease["vaccine"]}')
+                print(f'{disease["name"]:15} {disease["year"]:25} {disease["country"]:25} {disease["vaccine"]}')
 
 
 def search_file(fieldnames, filename):
@@ -54,7 +53,7 @@ def search_file(fieldnames, filename):
 print("Eradicated Diseases List")
 print("-" * 30)
 
-fieldnames = ['name', 'year', 'country', 'deaths', 'vaccine']
+fieldnames = ['name', 'year', 'country', 'vaccine']
 filename = 'eradicated_diseases.csv'
 
 selection = 0
